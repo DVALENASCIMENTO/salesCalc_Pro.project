@@ -22,6 +22,16 @@ body {
 h1 {
     text-align: center;
     color: #ffd700; /* Cor de ouro */
+    animation: blink 1.5s infinite;
+    background: linear-gradient(90deg, #ffd700, #ffcc00, #ffd700);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 label {
@@ -50,7 +60,6 @@ input {
     color: #ffcc00;
 }
 
-
 button {
     width: 100%;
     padding: 10px;
@@ -74,6 +83,7 @@ h2 {
 
 footer {
     margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -85,3 +95,4 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
