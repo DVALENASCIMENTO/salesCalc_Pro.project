@@ -94,5 +94,41 @@ function calcularTotal() {
     salvarDados(); // Salva os dados toda vez que o cálculo é realizado
 }
 
+// Função para salvar os dados como PDF
+function salvarComoPDF() {
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF();
+
+    // Adiciona título
+    doc.setFontSize(20);
+    doc.text('SalesCalc Pro', 20, 20);
+
+    // Adiciona conteúdo
+    doc.setFontSize(12);
+    const vendas = document.getElementById('vendas').value || 'N/A';
+    const porcentagem = document.getElementById('porcentagem').value || 'N/A';
+    const comissao = document.getElementById('comissao').value || 'N/A';
+    const salario = document.getElementById('salario').value || 'N/A';
+    const quebraCx = document.getElementById('quebraCx').value || 'N/A';
+    const dsr = document.getElementById('dsr').value || 'N/A';
+    const inss = document.getElementById('inss').value || 'N/A';
+    const valeTransporte = document.getElementById('valeTransporte').value || 'N/A';
+    const total = document.getElementById('total').textContent || 'N/A';
+
+    doc.text(`Vendas: ${vendas}`, 20, 30);
+    doc.text(`Porcentagem: ${porcentagem}`, 20, 40);
+    doc.text(`Comissão: ${comissao}`, 20, 50);
+    doc.text(`Salário: ${salario}`, 20, 60);
+    doc.text(`Quebra de Caixa: ${quebraCx}`, 20, 70);
+    doc.text(`DSR: ${dsr}`, 20, 80);
+    doc.text(`INSS: ${inss}`, 20, 90);
+    doc.text(`Vale Transporte: ${valeTransporte}`, 20, 100);
+    doc.text(`Total: ${total}`, 20, 110);
+
+    // Salva o PDF
+    doc.save('SalesCalc_Pro.pdf');
+}
+
 // Chama a função para carregar os dados ao iniciar a página
 window.onload = carregarDados;
