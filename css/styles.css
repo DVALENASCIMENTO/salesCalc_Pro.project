@@ -22,6 +22,16 @@ body {
 h1 {
     text-align: center;
     color: #ffd700; /* Cor de ouro */
+    animation: blink 1.5s infinite;
+    background: linear-gradient(90deg, #ffd700, #ffcc00, #ffd700);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 label {
@@ -37,6 +47,17 @@ input {
     border-radius: 5px;
     border: none;
     font-size: 1em;
+}
+
+.edit-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #ffd700;
+    font-size: 1.2em;
+}
+
+.edit-icon:hover {
+    color: #ffcc00;
 }
 
 button {
@@ -60,8 +81,41 @@ h2 {
     color: #ffd700; /* Cor de ouro */
 }
 
+/* Estilo comum para todos os botões */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo específico para o botão "Calcular Total" */
+button.calcular-total {
+    background-color: #4CAF50; /* Cor verde */
+    color: white;
+    width: 200px; /* Largura fixada */
+}
+
+/* Estilo específico para o botão "Salvar em PDF" */
+button.salvar-pdf {
+    background-color: #393a3b; /* Cor azul */
+    color: white;
+    width: 200px; /* Largura fixada */
+}
+
+/* Estilo para o botão ao passar o mouse */
+button:hover {
+    opacity: 0.8;
+}
+
+
 footer {
     margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -73,3 +127,4 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+

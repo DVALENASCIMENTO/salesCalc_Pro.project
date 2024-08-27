@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1>SalesCalc Pro</h1>
+        
         <label for="vendas">Vendas (R$)</label>
         <input type="number" id="vendas" placeholder="00.000,00">
         
@@ -24,10 +25,24 @@
         <label for="quebraCx">Quebra Cx (R$)</label>
         <input type="number" id="quebraCx" placeholder="00.000,00">
         
+        <label for="dsr">DSR (R$)
+            <span class="edit-icon" onclick="editarDiasUteis()">✎</span>
+            <span class="edit-icon" onclick="editarDiasDescanso()">✎</span>
+        </label>
+        <input type="text" id="dsr" readonly>
+        
+        <label for="inss">INSS (R$)</label>
+        <input type="text" id="inss" readonly>
+        
+        <label for="valeTransporte">Vale Transporte (R$)</label>
+        <input type="number" id="valeTransporte" placeholder="00.000,00">
+        
         <button onclick="calcularTotal()">Calcular Total</button>
         
         <h2>Total: <span id="total"></span></h2>
     </div>
+
+    <button class="salvar-pdf" onclick="salvarComoPDF()">Salvar em PDF</button>
     
     <footer>
         <p>Diego Nascimento - Analista e Desenvolvedor de Sistemas</p>
@@ -37,7 +52,8 @@
             <a href="https://github.com/DVALENASCIMENTO" target="_blank">GitHub</a>
         </div>
     </footer>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 </html>
