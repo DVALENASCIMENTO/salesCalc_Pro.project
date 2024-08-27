@@ -39,6 +39,18 @@ input {
     font-size: 1em;
 }
 
+.edit-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #ffd700;
+    font-size: 1.2em;
+}
+
+.edit-icon:hover {
+    color: #ffcc00;
+}
+
+
 button {
     width: 100%;
     padding: 10px;
