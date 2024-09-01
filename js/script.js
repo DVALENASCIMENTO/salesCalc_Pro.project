@@ -4,29 +4,29 @@ let diasDescanso = 4; // Valor padrão
 
 // Função para carregar os dados salvos no localStorage
 function carregarDados() {
-    document.getElementById('vendas').value = localStorage.getItem('vendas') || '';
-    document.getElementById('porcentagem').value = localStorage.getItem('porcentagem') || '';
-    document.getElementById('salario').value = localStorage.getItem('salario') || '';
-    document.getElementById('quebraCx').value = localStorage.getItem('quebraCx') || '';
-    document.getElementById('dsr').value = localStorage.getItem('dsr') || '';
-    document.getElementById('inss').value = localStorage.getItem('inss') || '';
-    document.getElementById('valeTransporte').value = localStorage.getItem('valeTransporte') || '';
-    diasUteis = parseInt(localStorage.getItem('diasUteis')) || 27;
-    diasDescanso = parseInt(localStorage.getItem('diasDescanso')) || 4;
+    document.getElementById('vendas').value = localStorage.getItem('salesCalc_Pro_vendas') || '';
+    document.getElementById('porcentagem').value = localStorage.getItem('salesCalc_Pro_porcentagem') || '';
+    document.getElementById('salario').value = localStorage.getItem('salesCalc_Pro_salario') || '';
+    document.getElementById('quebraCx').value = localStorage.getItem('salesCalc_Pro_quebraCx') || '';
+    document.getElementById('dsr').value = localStorage.getItem('salesCalc_Pro_dsr') || '';
+    document.getElementById('inss').value = localStorage.getItem('salesCalc_Pro_inss') || '';
+    document.getElementById('valeTransporte').value = localStorage.getItem('salesCalc_Pro_valeTransporte') || '';
+    diasUteis = parseInt(localStorage.getItem('salesCalc_Pro_diasUteis')) || 27;
+    diasDescanso = parseInt(localStorage.getItem('salesCalc_Pro_diasDescanso')) || 4;
     calcularTotal(); // Calcula o total ao carregar os dados
 }
 
 // Função para salvar os dados no localStorage
 function salvarDados() {
-    localStorage.setItem('vendas', document.getElementById('vendas').value);
-    localStorage.setItem('porcentagem', document.getElementById('porcentagem').value);
-    localStorage.setItem('salario', document.getElementById('salario').value);
-    localStorage.setItem('quebraCx', document.getElementById('quebraCx').value);
-    localStorage.setItem('dsr', document.getElementById('dsr').value);
-    localStorage.setItem('inss', document.getElementById('inss').value);
-    localStorage.setItem('valeTransporte', document.getElementById('valeTransporte').value);
-    localStorage.setItem('diasUteis', diasUteis);
-    localStorage.setItem('diasDescanso', diasDescanso);
+    localStorage.setItem('salesCalc_Pro_vendas', document.getElementById('vendas').value);
+    localStorage.setItem('salesCalc_Pro_porcentagem', document.getElementById('porcentagem').value);
+    localStorage.setItem('salesCalc_Pro_salario', document.getElementById('salario').value);
+    localStorage.setItem('salesCalc_Pro_quebraCx', document.getElementById('quebraCx').value);
+    localStorage.setItem('salesCalc_Pro_dsr', document.getElementById('dsr').value);
+    localStorage.setItem('salesCalc_Pro_inss', document.getElementById('inss').value);
+    localStorage.setItem('salesCalc_Pro_valeTransporte', document.getElementById('valeTransporte').value);
+    localStorage.setItem('salesCalc_Pro_diasUteis', diasUteis);
+    localStorage.setItem('salesCalc_Pro_diasDescanso', diasDescanso);
 }
 
 // Função para calcular o INSS
