@@ -94,6 +94,18 @@ function calcularTotal() {
     salvarDados(); // Salva os dados toda vez que o cálculo é realizado
 }
 
+// Função para rolar suavemente para o conteúdo principal
+function scrollToContent() {
+    const mainContent = document.getElementById("main-content");
+    if (mainContent) {
+        mainContent.scrollIntoView({
+            behavior: 'smooth'
+        });
+    } else {
+        console.error("Elemento com ID 'main-content' não encontrado.");
+    }
+}
+
 // Função para salvar os dados como PDF
 function salvarComoPDF() {
     const { jsPDF } = window.jspdf;

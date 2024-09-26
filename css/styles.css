@@ -1,87 +1,125 @@
+/* Fonte global e configurações de layout */
 body {
     font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+    background-color: #1A284D; /* Cor Primária: Azul Escuro */
+    color: #B0B8C2; /* Cor Secundária: Cinza Prateado */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Alterado de center para flex-start */
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    overflow-x: hidden; /* Evita scroll horizontal */
 }
 
+/* Container principal */
 .container {
-    background-color: #333;
+    background-color: #FFFFFF; /* Cor de Fundo Secundária: Branco Puro */
     padding: 20px;
     border-radius: 10px;
     width: 90%;
     max-width: 400px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #B0B8C2; /* Cor Secundária: Cinza Prateado */
+    margin-top: 20px; /* Adiciona espaço acima do container */
 }
 
+/* Seção de introdução */
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Removido height: 100vh; */
+    width: 100%;
+    padding: 50px 0; /* Adicionado padding para espaçamento */
+    background: linear-gradient(45deg, #1A284D, #58B689); /* Azul Escuro e Verde Claro */
+    color: #58B689; /* Cor de Destaque: Verde Claro */
+}
+
+/* Logo */
+.logo {
+    max-width: 250px; 
+    margin-bottom: 20px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Parágrafos */
+p {
+    text-align: center;
+    color: #B0B8C2; /* Cor Secundária: Cinza Prateado */
+    font-size: 1em;
+}
+
+/* Botão de início */
+.start-button {
+    background-color: #58B689; /* Cor de Destaque: Verde Claro */
+    color: #1A284D; /* Cor Primária: Azul Escuro */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px; /* Adicionado margem superior */
+}
+
+.start-button:hover {
+    background-color: #3EB489; /* Verde Claro mais escuro no hover */
+    color: #FFFFFF; /* Branco no texto */
+}
+
+/* Títulos principais */
 h1 {
     text-align: center;
-    color: #ffd700; /* Cor de ouro */
+    color: #1A284D; /* Cor Primária: Azul Escuro */
     animation: blink 1.5s infinite;
-    background: linear-gradient(90deg, #ffd700, #ffcc00, #ffd700);
+    background: linear-gradient(90deg, #58B689, #B0B8C2, #58B689); /* Gradiente de Destaque */
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 }
 
+/* Animação de piscar */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
 }
 
+/* Labels de formulário */
 label {
     display: block;
     margin-top: 10px;
+    color: #1A284D; /* Cor Primária: Azul Escuro */
 }
 
+/* Campos de entrada */
 input {
     width: calc(100% - 22px);
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid #B0B8C2; /* Cor Secundária: Cinza Prateado */
     font-size: 1em;
+    background-color: #FFFFFF; /* Cor de Fundo Secundária: Branco Puro */
+    color: #1A284D; /* Cor Primária: Azul Escuro */
 }
 
+/* Ícone de edição */
 .edit-icon {
     cursor: pointer;
     margin-left: 10px;
-    color: #ffd700;
+    color: #58B689; /* Cor de Destaque: Verde Claro */
     font-size: 1.2em;
 }
 
 .edit-icon:hover {
-    color: #ffcc00;
+    color: #3EB489; /* Verde Claro mais escuro no hover */
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #444;
-    color: #ffd700;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-h2 {
-    text-align: center;
-    color: #ffd700; /* Cor de ouro */
-}
-
-/* Estilo comum para todos os botões */
+/* Botões genéricos */
 button {
     display: inline-block;
     padding: 10px 20px;
@@ -90,41 +128,59 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin-top: 15px;
 }
 
-/* Estilo específico para o botão "Calcular Total" */
+/* Botão "Calcular Total" */
 button.calcular-total {
-    background-color: #4CAF50; /* Cor verde */
-    color: white;
-    width: 200px; /* Largura fixada */
+    background-color: #58B689; /* Cor de Destaque: Verde Claro */
+    color: #FFFFFF; /* Branco */
+    width: 200px;
 }
 
-/* Estilo específico para o botão "Salvar em PDF" */
+button.calcular-total:hover {
+    background-color: #3EB489; /* Verde Claro mais escuro no hover */
+    opacity: 0.9;
+}
+
+/* Botão "Salvar em PDF" */
 button.salvar-pdf {
-    background-color: #393a3b; /* Cor azul */
-    color: white;
-    width: 200px; /* Largura fixada */
+    background-color: #B0B8C2; /* Cor Secundária: Cinza Prateado */
+    color: #1A284D; /* Cor Primária: Azul Escuro */
+    width: 200px;
 }
 
-/* Estilo para o botão ao passar o mouse */
+button.salvar-pdf:hover {
+    background-color: #A0A6B0; /* Cinza Prateado mais escuro no hover */
+    opacity: 0.9;
+}
+
+/* Botões genéricos hover */
 button:hover {
     opacity: 0.8;
 }
 
+/* Títulos secundários */
+h2 {
+    text-align: center;
+    color: #1A284D; /* Cor Primária: Azul Escuro */
+}
 
+/* Rodapé */
 footer {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+    color: #B0B8C2; /* Cor Secundária: Cinza Prateado */
 }
 
 footer a {
-    color: #ffd700;
+    color: #58B689; /* Cor de Destaque: Verde Claro */
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
+    color: #3EB489; /* Verde Claro mais escuro no hover */
 }
-
